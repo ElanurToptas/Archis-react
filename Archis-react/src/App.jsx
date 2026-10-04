@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Text from "./components/Text"
+import Button from "./components/Button"
 
 function App() {
   //let name = "react" -> JSde bu şekilde kullanıyorduk 
@@ -16,7 +17,7 @@ function App() {
     if(count<= 0) return 
     setCount(count - 1) //ya böyle yapabilirim 
     //setCount(prev => prev - 1) ya da böyle de yapabilirdik 
-    // Bir diğer seçenek için de 31. satıra bak
+    // Bir diğer seçenek için de 33. satıra bak
   }
 
   return (
@@ -26,7 +27,8 @@ function App() {
     </div>
     
     <div>
-      <button onClick={decrement}>Azalt</button>
+      <Button name={"Azalt"} onClick={() => setCount(count-1)}/> {/*Component mantığını kullanarak state de bu şekildey yazıyoruz */}
+      {/* <button onClick={decrement}>Azalt</button> */}
       <div>{count}</div>
       <button onClick={() => setCount(count + 1)}>Artır</button>
     </div>
