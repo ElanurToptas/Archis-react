@@ -1,19 +1,17 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Home from './pages/Home';
-import Detail from './pages/Detail';
-
+import React, {useRef} from 'react';
 
 function App() {
- 
+  const countRef= useRef(0);
+
+  const clickFunc = () => {
+    countRef.current++;
+    console.log(countRef.current, "countRef")
+  }
+  
   return (
-    <>
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />}/>
-         <Route path='/detail/:id' element={<Detail />}/>
-      </Routes>
-    </Router>
-    </>
+    <div onClick={clickFunc}>
+      click me!!!
+    </div>
   )
 }
 
